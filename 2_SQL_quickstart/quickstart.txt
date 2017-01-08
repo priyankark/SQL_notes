@@ -1,0 +1,98 @@
+SQL Quick Start
+
+Examples
+
+SELECT * FROM table; 
+
+INSERT INTO table (a,b,c)
+VALUES (1,2,3)
+ORDER BY b;
+
+UPDATE table SET a=7,b=5;
+
+DELETE FROM table WHERE a=7;
+
+SELECT COUNT (*) FROM table
+
+Example: 
+Select all rows from Country table:
+
+SELECT * from Country;
+
+SELECT->rows 
+*-> all columns
+from->preadtes source
+Country->source
+
+May or may not be in order unless specified.
+
+To display in order:
+
+SELECT * from Country ORDER By Name;
+
+Alpahbetical order by name.
+
+Specifying columns:
+
+SELECT Name, LifeExpectancy FROM Country ORDER BY Name; //without label
+
+With specific label
+SELECT Name, LifeExpectancy AS 'Life Expectancy' FROM Country ORDER BY Name;
+(use AS)
+
+SELECT 1+2;
+1+2->column
+3->content
+
+(Specifying source is not necessary).
+
+Return Count :
+
+SELECT COUNT(*) FROM Country;
+
+//Returns number of rows
+
+Selecting only those rows one is interested in:
+
+SELECT Name, Continent, Region FROM Country; //All rows
+
+SELECT Name, Continent, Region FROM Country WHERE Continent='Europe'; //46 rows
+
+WHERE clause uses it to determine which rows to select
+
+SELECT Name, Continent FROM Country WHERE CONTINENT='Europe' LIMIT 5;
+
+Selecting particular columns
+
+SELECT * FROM Country ORDER BY Code LIMIT 5;
+
+SELECT COUNT(*) FROM Country; //239
+
+SELECT COUNT(*) FROM Country WHERE Population >1000000;
+
+//10
+
+SELECT COUNT(*) FROM Country WHERE Population>1000000 AND Continent='Europe'
+
+CRUD
+test.db database
+1) INSERT
+
+INSERT INTO Customer (name, address,city,state,zip) VALUES ('Fred Flintstone',...);
+SELECT * FROM Customer;
+
+Suppose only some values are available
+INSERT INTO Customer(name,city,state) VALUES(...,...,...);
+
+//NULL is put into the others.
+
+2) UPDATE
+UPDATE Customer SET Address='123 Music Avenue', Zip='98056' WHERE id=5;
+SELECT * FROM Customer;
+
+3) DELETE
+DELETE  FROM Customer WHERE id=4;
+//Deletes the entire row.
+
+
+
