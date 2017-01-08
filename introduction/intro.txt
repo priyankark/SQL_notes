@@ -1,0 +1,22 @@
+SQL-> Structured Query Language.
+
+Pronounced S Q L and not Sequel.
+
+DML-> Data Manipulation language
+DDL-> Data Definition Language
+
+Relational Database-> database capable of represnting relations between data
+
+SQL is a relational database
+
+Rows and columns-> Rows are records. A logical set of data items.
+
+A column is a collection of data of same type, kind,usage.
+
+A table is a collection of rows and columns.
+
+DBMS-> DataBase Management System
+
+ 
+
+
