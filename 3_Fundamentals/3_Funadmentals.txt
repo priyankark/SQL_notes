@@ -1,0 +1,167 @@
+A database is a collection of tables.
+
+A table is a collection of data organized into rows and columns.
+
+Tables amy have realtionships with other tables
+
+Standard SQL
+
+->Lack of compliance
+
+Usages
+SELECT Name, Population/1000000 AS PopMM FROM Country WHERE Population>=1000000 ORDER BY Population DESC;
+
+->Formatting SQL
+
+CREATING TABLES
+
+CREATE TABLE test (
+	a INTEGER,
+	b TEXT
+);
+
+INSERT INTO test VALUES (1,'a');
+
+SELECT * FROM test;
+
+DELETING A TABLE
+-----------------
+CREATE TABLE test ( a TEXT, b TEXT);
+
+INSERT INTO test VALUES ('one','two');
+
+DROP TABLE test;
+
+SELECT * FROM test; //leads to error
+
+DROP TABLE IF EXISTS test;
+
+INSERT INTO
+------------
+
+CREATE TABLE test( a INTEGER, b TEXT, c TEXT);
+SELECT * FROM test;
+
+INSERT INTO test VALUES(1,'This', 'Right There!');
+SELECT * FROM test;
+
+INSERT INTO test(b, c) VALUES ('That','Over There');
+
+SELECT * FROM test;
+
+
+Another example:
+INSERT INTO test (a,b,c) SELECT id, name, description FROM item;
+SELECT * FROM test;
+
+DELETE FROM
+------------
+
+DELETE FROM test WHERE a=3;
+SELECT * FROM test;
+
+SELECT * FROM test WHERE a IS NOT NULL;
+SELECT * FROM test WHERE b='';
+SELECT * FROM test WHERE c IS NULL;
+
+DROP TABLE test;
+---------------
+CREATE TABLE test(
+	a INTEGER NOT NULL,
+	b TEXT NOT NULL,
+	c TEXT 
+);
+
+A way to get around this problem
+---------------------------------
+
+CREATE TABLE test(a TEXT, b TEXT, c TEXT DEFAULT 'panda');
+
+INSERT INTO test(a,b) VALUES ('one','two');
+SELECT * FROM test;
+
+CREATE TABLE test (a TEXT UNIQUE, b TEXT, c TEXT DEFAULT 'panda');
+
+NULL maybe exempted from the Unique constraints.
+
+ALTER table
+-----------
+
+CREATE TABLE test (a TEXT, b TEXT, c TEXT);
+INSERT INTO test VALUES ('one','two','three');
+
+To add a new column
+ALTER TABLE test ADD d TEXT;
+
+To add contraints
+ALTER TABLE test ADD e TEXT DEFAULT 'panda';
+
+CREATING ID Columns
+-------------------
+
+CREATE TABLE(
+	id INTEGER PRIMARY KEY,
+	a INTEGER,
+	b TEXT
+);
+
+INSERT INTO test(a,b) VALUES (10, 'a');
+
+SELECT * FROM test;
+
+Filtering data with WHERE, LIKE, IN
+
+SELECT Name, Continent, Population FROM Country WHERE Population < 1000000 ORDER BY Population DESC;
+
+SELECT Name, Continent, Population FROM Country WHERE Name LIKE '%islands%' ORDER BY NAME;
+
+only ending ISLAND -> %island 
+
+zero or more characters.
+
+IN
+
+SELECT Name, Continent, Population FROM Country WHERE Continnet IN ('Europe','Asia') ORDER BY NAME;
+
+Removing DUPLICATIONS
+
+SELECT Continent FROM Country;
+
+SELECT DISTINCT Continent FROM Country;
+
+CREATE TABLE test (a INT, b INT);
+INSERT INTO test VALUES (1,1,);
+INSERT INTO test VALUES(2,1);
+
+
+SELECT DISTINCT a FROM test;
+
+SELECT DISTINCT a,b FROM test; //only values where both are distinct.
+
+DROP TABLE test;
+
+ORDER BY
+---------
+SELECT Name FROM Country ORDER BY Name DESC;
+
+SELECT Name, Continent, Region FROM Country ORDERBY Continent DESC, Region, Name;
+
+Continents in descending. Within those continents, regions in ascending. Names in ascending.
+
+Conditional Expressions -> CASE WHEN
+-----------------------
+CREATE * FROM booltest;
+
+SELECT 
+	CASE WHEN a THEN 'true' ELSE 'false' END as boolA
+	CASE WHEN b THEN 'true' ELSE 'false' END AS boolB
+FROM booltest;
+
+
+
+
+
+
+
+
+ 
