@@ -1,0 +1,19 @@
+Table Relationships
+------------------
+
+Imagine tables as venn diagrams. The intersection of the two can help determine conditions for join
+
+Inner, outer joins
+
+Left inner join and Right outer joins
+
+Accessing related tables with Join
+----------------------------------
+
+SELECT l.description AS L, r.description AS R FROM left AS l JOIN right AS r ON l.id=r.id;
+
+
+SELECT c.name AS Cust, i.name AS Item, s.price AS Price FROM customer AS c JOIN sale AS s oN s.customer_id=c.id JOIN item AS i ON s.item_id=i.id
+ORDER BY Cust, Item;
+
+DELETE FROM customer WHERE ID=4 
