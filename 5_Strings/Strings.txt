@@ -1,0 +1,49 @@
+STRING HANDLING
+
+SELECT 'a standard string';
+
+SELECT 'a single '' quote'
+
+Length of a string
+------------------
+
+SELECT LENGTH('string');
+
+SELECT Name, LENGTH(Name) AS Len FROM City ORDER BY Len DESC, Name;
+
+Substring
+----------
+
+SELECT SUBSTR('this string',6);
+
+second argument->starting index
+
+SELECT released,
+	SUBSTR(released,1,4) AS year,
+	SUBSTR(released,6,2) AS month,
+	SUBSTR(released,9,2) AS day
+FROM album ORDER BY released;
+
+TRIM
+----
+
+SELECT '   string  ';
+SELECT TRIM('   string   ');
+
+LTRIM-> left trim
+RTRIM-> right trim-> only spaces on the right side are removed
+
+Specifying character to remove
+SELECT TRIM('...string...','.');
+
+Uppercase and lowercase
+-----------------------
+
+SELECT 'StRing'='string'
+gives 0
+
+SELECT LOWER('StRiNg')=LOWER('string')
+
+SELECT UPPER('StRiNg')=UPPER('string')
+
+
