@@ -1,0 +1,31 @@
+INTEGFER AND REAL TYPES
+
+INTEGER(precision)
+DECIMAL(precision,scale);
+MONEY(precision,scale);
+
+REAL(precision)
+FLOAT(precision)
+
+SELECT (1+1);->result is an integer
+SELECT (1+1.0)->result is a real number
+
+SELECT TYPEOF(1+1)->Integer
+
+SELECT TYPEOF(1+1.0)->REAL
+
+SELECT TYPEOF('panda'+'koala');->Integer
+
+SELECT 1/2 ->0
+SELECT 1.0/2->0.5
+
+SELECT CAST(1 AS REAL)/2;->0.5
+
+ROUND
+-----
+
+SELECT 2.55555;
+
+SELECT ROUND(2.55555);->3.0
+SELECT ROUND(2.55555,3);
+->2.556
